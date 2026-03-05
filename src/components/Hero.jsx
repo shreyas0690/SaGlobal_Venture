@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 
 const slides = [
   {
-    image: '/images/hero-sawmill.png',
+    image: '/images/QualityTimber.png',
     subtitle: 'Since 1970 — TRUSTED TIMBER PARTNER ACROSS INDIA',
     title: 'Quality Timber Delivered Reliably',
     desc: 'Supplying premium pine timber and jungle wood with consistent grading, assured availability, and transparent dealing for manufacturers, builders, and traders across India.',
@@ -19,10 +19,10 @@ const slides = [
     highlight: 'Durability',
     cta: 'Get Packaging Quote',
     href: '#quote',
-    stat: { number: '480+', label: 'HEAVY DUTY PACKAGING' }
+    stat: { number: '', label: 'HEAVY DUTY PACKAGING' }
   },
   {
-    image: '/images/hero-timber.png',
+    image: '/images/CustomSizes..png',
     subtitle: 'IN-HOUSE SAWMILL OPERATIONS',
     title: 'Custom Sizes. Precision Cutting Accuracy',
     desc: 'Equipped with in-house sawmill facilities, we cut pine timber into customized sizes including planks and sleepers as per client drawings, usage, and bulk requirements.',
@@ -150,9 +150,9 @@ export default function Hero() {
         {/* Right side - stat card */}
         <div className="hero2__side">
           {slides.map((slide, i) => (
-            <div key={i} className={`hero2__stat-card ${i === current ? 'hero2__stat-card--active' : ''}`}>
-              <span className="hero2__stat-number">{slide.stat.number}</span>
-              <span className="hero2__stat-label">{slide.stat.label}</span>
+            <div key={i} className={`hero2__stat-card ${i === current ? 'hero2__stat-card--active' : ''} ${!slide.stat.number ? 'hero2__stat-card--no-num' : ''}`}>
+              {slide.stat.number && <span className="hero2__stat-number">{slide.stat.number}</span>}
+              <span className={`hero2__stat-label ${!slide.stat.number ? 'hero2__stat-label--large' : ''}`}>{slide.stat.label}</span>
             </div>
           ))}
         </div>

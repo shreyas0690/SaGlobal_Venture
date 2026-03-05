@@ -2,15 +2,7 @@ import { useState, useEffect } from 'react'
 import { useCart } from '../context/CartContext'
 
 const navLinks = [
-  {
-    label: 'Home',
-    href: '#',
-    submenu: [
-      { label: 'Sawmill', href: '#hero' },
-      { label: 'Landscaping', href: '#portfolio' },
-      { label: 'Carpentry', href: '#services' },
-    ]
-  },
+  { label: 'Home', href: '#' },
   {
     label: 'Pages',
     href: '#',
@@ -24,7 +16,7 @@ const navLinks = [
     ]
   },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Blog', href: '#blog' },
+  { label: 'Our Services', href: '#services' },
   { label: 'Shop', href: '#products' },
 ]
 
