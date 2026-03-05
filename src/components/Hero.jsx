@@ -33,7 +33,7 @@ const slides = [
   }
 ]
 
-export default function Hero() {
+export default function Hero({ onQuoteClick }) {
   const [current, setCurrent] = useState(0)
   const [animating, setAnimating] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -130,18 +130,12 @@ export default function Hero() {
 
               {/* CTA Row */}
               <div className="hero2__cta-row">
-                <a href={slide.href} className="hero2__cta-btn">
+                <button onClick={() => onQuoteClick && onQuoteClick()} className="hero2__cta-btn">
                   <span className="hero2__cta-text">{slide.cta}</span>
                   <span className="hero2__cta-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </span>
-                </a>
-                <a href="#about" className="hero2__play-btn">
-                  <span className="hero2__play-circle">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="8,5 20,12 8,19"/></svg>
-                  </span>
-                  <span className="hero2__play-label">Watch Video</span>
-                </a>
+                </button>
               </div>
             </div>
           ))}

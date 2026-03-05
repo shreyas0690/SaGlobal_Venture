@@ -16,7 +16,7 @@ function App() {
     <div className="app">
       <Header onQuoteClick={() => setQuoteOpen(true)} />
       <main>
-        <Hero />
+        <Hero onQuoteClick={() => setQuoteOpen(true)} />
         <Portfolio />
         <About />
         <ClientsShowcase />

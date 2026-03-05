@@ -734,6 +734,8 @@ ul {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 0;
+  border: none;
+  cursor: pointer;
   overflow: hidden;
   transition: all var(--transition);
   position: relative;

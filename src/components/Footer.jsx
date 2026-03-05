@@ -55,7 +55,6 @@ export default function Footer() {
                 <li><a href="#">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#products">Shop</a></li>
                 <li><a href="#footer">Contact</a></li>
               </ul>
             </div>
