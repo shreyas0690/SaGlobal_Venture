@@ -376,32 +376,52 @@ ul {
 
 .header__hamburger {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  width: 32px;
+  height: 24px;
+  position: relative;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
+  z-index: 1000;
 }
 
 .header__hamburger span {
   display: block;
-  width: 24px;
+  position: absolute;
   height: 2px;
+  width: 100%;
   background: var(--color-dark);
-  transition: all var(--transition);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  left: 0;
+}
+
+.header__hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.header__hamburger span:nth-child(2) {
+  top: 11px;
+}
+
+.header__hamburger span:nth-child(3) {
+  top: 22px;
 }
 
 .header__hamburger--open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  top: 11px;
+  transform: rotate(135deg);
 }
 
 .header__hamburger--open span:nth-child(2) {
   opacity: 0;
+  left: -20px;
 }
 
 .header__hamburger--open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  top: 11px;
+  transform: rotate(-135deg);
 }
 
 /* Scrolled header */
