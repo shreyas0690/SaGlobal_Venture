@@ -86,68 +86,6 @@ export default function About() {
           </div>
         </div>
 
-
-        {/* Clients We Served — Premium Dark Section */}
-        <div className="clients-showcase">
-          <div className="clients-showcase__header">
-            <span className="clients-showcase__badge">Our Trusted Partners</span>
-            <h3 className="clients-showcase__title">Clients We Served</h3>
-            <p className="clients-showcase__sub">Powering industries with reliable timber, packaging, and logistics solutions</p>
-            <div className="clients-showcase__divider">
-              <span></span><span></span><span></span>
-            </div>
-          </div>
-          <div className="clients-showcase__grid">
-            <div className="clients-showcase__card">
-              <div className="clients-showcase__card-glow"></div>
-              <div className="clients-showcase__card-icon">🏭</div>
-              <div className="clients-showcase__card-info">
-                <h4>LG Electronics</h4>
-                <p>Consumer Electronics</p>
-              </div>
-            </div>
-            <div className="clients-showcase__card">
-              <div className="clients-showcase__card-glow"></div>
-              <div className="clients-showcase__card-icon">🍪</div>
-              <div className="clients-showcase__card-info">
-                <h4>PriyaGold Biscuit</h4>
-                <p>FMCG &amp; Food Products</p>
-              </div>
-            </div>
-            <div className="clients-showcase__card">
-              <div className="clients-showcase__card-glow"></div>
-              <div className="clients-showcase__card-icon">🧵</div>
-              <div className="clients-showcase__card-info">
-                <h4>Surya Udhyog Textile</h4>
-                <p>Textile Manufacturing</p>
-              </div>
-            </div>
-            <div className="clients-showcase__card">
-              <div className="clients-showcase__card-glow"></div>
-              <div className="clients-showcase__card-icon">🔧</div>
-              <div className="clients-showcase__card-info">
-                <h4>KK Rubber</h4>
-                <p>Rubber &amp; Polymer Industry</p>
-              </div>
-            </div>
-            <div className="clients-showcase__card">
-              <div className="clients-showcase__card-glow"></div>
-              <div className="clients-showcase__card-icon">🪵</div>
-              <div className="clients-showcase__card-info">
-                <h4>Pyramid Timber Associates</h4>
-                <p>Timber Trading &amp; Distribution</p>
-              </div>
-            </div>
-            <div className="clients-showcase__card clients-showcase__card--gold">
-              <div className="clients-showcase__card-shimmer"></div>
-              <div className="clients-showcase__card-icon">✨</div>
-              <div className="clients-showcase__card-info">
-                <h4>And Many More</h4>
-                <p>Across 10+ Industries</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
