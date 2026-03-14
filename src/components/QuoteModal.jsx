@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
+
+const EMAILJS_SERVICE_ID = 'service_i0fb9yv'
+const EMAILJS_TEMPLATE_ID = 'template_dsqn0bq'
+const EMAILJS_PUBLIC_KEY = 'bu8-aakqqJj9pEseJ'
 
 export default function QuoteModal({ isOpen, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', material: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -18,14 +25,36 @@ export default function QuoteModal({ isOpen, onClose }) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      onClose()
-    }, 2500)
-    setForm({ name: '', email: '', phone: '', material: '', message: '' })
+    setLoading(true)
+    setError('')
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          material: form.material,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      setSubmitted(true)
+      setForm({ name: '', email: '', phone: '', material: '', message: '' })
+      setTimeout(() => {
+        setSubmitted(false)
+        onClose()
+      }, 2500)
+    } catch (err) {
+      console.error('EmailJS Error:', err)
+      setError('Failed to send request. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (!isOpen) return null
@@ -56,6 +85,12 @@ export default function QuoteModal({ isOpen, onClose }) {
             <span>Thank you! We'll contact you soon.</span>
           </div>
         )}
+        {error && (
+          <div className="qmodal__error">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            <span>{error}</span>
+          </div>
+        )}
 
         {/* Form */}
         <form className="qmodal__form" onSubmit={handleSubmit}>
@@ -83,9 +118,9 @@ export default function QuoteModal({ isOpen, onClose }) {
             <label htmlFor="qm-msg">Additional Details *</label>
             <textarea id="qm-msg" name="message" rows="4" placeholder="Tell us more about your requirements..." value={form.message} onChange={handleChange} required />
           </div>
-          <button type="submit" className="qmodal__submit">
-            Send Request
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          <button type="submit" className="qmodal__submit" disabled={loading}>
+            {loading ? 'Sending...' : 'Send Request'}
+            {!loading && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>}
           </button>
         </form>
       </div>

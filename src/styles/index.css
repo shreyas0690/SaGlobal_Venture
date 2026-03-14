@@ -1,4 +1,4 @@
-﻿/* ===================================
+/* ===================================
    TIMBER COMPANY - PREMIUM STYLES
    =================================== */
 
@@ -672,25 +672,26 @@ ul {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-primary);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Title - word by word */
 .hero2__title {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 4.5vw, 3.75rem);
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
   font-weight: 700;
   color: var(--color-white);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 40px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero2__title-word {
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;
   margin-right: 0.3em;
-  padding-bottom: 0.1em;
+  padding-bottom: 0.15em;
   padding-left: 0.02em;
   padding-right: 0.02em;
 }
@@ -2708,6 +2709,29 @@ ul {
   box-shadow: 0 6px 24px rgba(200, 149, 108, 0.3);
 }
 
+.qmodal__submit:disabled,
+.quote__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.qmodal__error,
+.quote__error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(231, 76, 60, 0.08);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.4s ease;
+}
+
 @media (max-width: 600px) {
   .qmodal__card {
     padding: 32px 24px;
@@ -3787,6 +3811,13 @@ ul {
     display: none;
   }
 
+  .hero2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 70px;
+  }
+
   .hero2__scroll {
     display: none;
   }
@@ -3801,6 +3832,7 @@ ul {
 
   .hero2__title {
     font-size: clamp(2rem, 5vw, 3.5rem);
+    overflow: visible;
   }
 
   .about__grid {
@@ -3848,8 +3880,31 @@ ul {
     text-align: left;
   }
 
+  .portfolio2__grid {
+    grid-template-columns: 1fr;
+  }
 
+  .portfolio2__card-content {
+    text-align: left;
+    padding: 20px;
+    gap: 12px;
+  }
 
+  .portfolio2__card-num {
+    font-size: 2.5rem;
+  }
+
+  .portfolio2__card-title {
+    font-size: 1.125rem;
+  }
+
+  .portfolio2__card-desc {
+    font-size: 0.8125rem;
+  }
+
+  .cs__marquee-wrapper {
+    display: none;
+  }
 
 
   .blog__grid {
@@ -3904,8 +3959,60 @@ ul {
   }
 
   .hero2__container {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero2__side {
+    display: none;
+  }
+
+  .hero2__slide-content {
+    max-width: 100%;
+  }
+
+  .hero2__title {
+    font-size: clamp(1.75rem, 7vw, 2.6rem);
+    overflow: visible;
+    margin-bottom: 24px;
+  }
+
+  .hero2__title-word {
+    overflow: visible;
+  }
+
+  .hero2__subtitle {
+    white-space: normal;
+    font-size: 0.6875rem;
+  }
+
+  .hero2__subtitle-line {
+    flex-shrink: 0;
+  }
+
+  .hero2__subtitle-wrap {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero2__desc {
+    font-size: 0.9375rem;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .hero2__cta-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero2__cta-text {
+    padding: 16px 24px;
   }
 }
 
@@ -3929,8 +4036,28 @@ ul {
   }
 
   .hero2__title {
-    font-size: 2rem;
-    margin-bottom: 28px;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    overflow: visible;
+  }
+
+  .hero2__title-word {
+    overflow: visible;
+  }
+
+  .hero2__subtitle {
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero2__desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .hero2__container {
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
   .hero2__counter-current {
