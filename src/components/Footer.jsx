@@ -30,6 +30,10 @@ export default function Footer() {
                 Maman Road, Satha,<br/>
                 Bulandshahr, Uttar Pradesh – 203001
               </address>
+              <address className="footer__address" style={{ marginTop: '10px' }}>
+                Machhu Nagar, Gandhiram,<br/>
+                Gujarat – 370240
+              </address>
               <a href="mailto:office@saglobalventure.com" className="footer__contact-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 office@saglobalventure.com
